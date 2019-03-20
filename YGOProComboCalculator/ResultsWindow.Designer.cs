@@ -60,7 +60,7 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Combo";
-            this.columnHeader1.Width = 615;
+            this.columnHeader1.Width = 593;
             // 
             // columnHeader2
             // 
