@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -19,6 +20,7 @@ namespace YGOProComboCalculator
         private decimal _reshuffleAmount;
         private short handSize;
         private List<string> logs = new List<string>();
+        private string LastComboLogFileName;
         public ResultsWindow(List<List<Card>> combos,List<int> deck, decimal reshuffleAmount, bool goFirst)
         {
             InitializeComponent();
@@ -68,7 +70,9 @@ namespace YGOProComboCalculator
             }
             decimal percentage = GetPercentage(_globalCombosCount, _reshuffleAmount);
             amountLabel.Text = _globalCombosCount.ToString() + " out of "+ _reshuffleAmount + " hands = " + percentage.ToString()+"%";
-            File.WriteAllLines($"ComboLogs_{DateTime.Now.ToString("yyyyMMddTHHmmss")}.txt", logs);
+            LastComboLogFileName = $"ComboLogs_{DateTime.Now.ToString("yyyyMMddTHHmmss")}.txt";
+            File.WriteAllLines(LastComboLogFileName, logs);
+            logs.Clear();
         }
         private void DisplayResults(List<Card> combo,int result)
         {
@@ -115,6 +119,11 @@ namespace YGOProComboCalculator
             {
                 handSize = 6;
             }
+        }
+
+        private void OpenLogsButton_Click(object sender, EventArgs e)
+        {
+            Process.Start(LastComboLogFileName);
         }
     }
 }

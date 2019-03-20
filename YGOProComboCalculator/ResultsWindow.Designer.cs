@@ -39,6 +39,7 @@
             this.GoFirstCheckbox = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.OpenLogsButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -167,11 +168,23 @@
             0,
             0});
             // 
+            // OpenLogsButton
+            // 
+            this.OpenLogsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.OpenLogsButton.Location = new System.Drawing.Point(677, 327);
+            this.OpenLogsButton.Name = "OpenLogsButton";
+            this.OpenLogsButton.Size = new System.Drawing.Size(190, 48);
+            this.OpenLogsButton.TabIndex = 12;
+            this.OpenLogsButton.Text = "Open detailed logs";
+            this.OpenLogsButton.UseVisualStyleBackColor = true;
+            this.OpenLogsButton.Click += new System.EventHandler(this.OpenLogsButton_Click);
+            // 
             // ResultsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(879, 526);
+            this.Controls.Add(this.OpenLogsButton);
             this.Controls.Add(this.GoFirstCheckbox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.numericUpDown1);
@@ -203,5 +216,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.Button OpenLogsButton;
     }
 }
