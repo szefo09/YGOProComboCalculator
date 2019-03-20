@@ -72,12 +72,13 @@ namespace YGOProComboCalculator
                 return;
             }
             _combos.Add(combo);
-
+            
             ResultsWindow resultsWindow = new ResultsWindow(_combos,_decklist.Main.ToList(),numericUpDown1.Value, GoFirstCheckbox.Checked);
             this.Hide();
             resultsWindow.ShowDialog();
             resultsWindow.Dispose();
             this.Show();
+            ComboListBox.Items.Clear();
         }
 
         private void ResetCombosButton_Click(object sender, EventArgs e)
