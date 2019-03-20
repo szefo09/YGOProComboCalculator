@@ -31,6 +31,7 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.amountLabel = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -38,7 +39,6 @@
             this.GoFirstCheckbox = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,6 +67,12 @@
             this.columnHeader2.Text = "Amount";
             this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader2.Width = 143;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "%";
+            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader3.Width = 124;
             // 
             // label1
             // 
@@ -161,12 +167,6 @@
             0,
             0});
             // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "%";
-            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader3.Width = 124;
-            // 
             // ResultsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -182,7 +182,7 @@
             this.Controls.Add(this.listView1);
             this.Name = "ResultsWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ResultsWindow";
+            this.Text = "Results";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ResultsWindow_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);

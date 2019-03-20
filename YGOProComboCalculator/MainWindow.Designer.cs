@@ -63,7 +63,7 @@
             this.Controls.Add(this.listBox1);
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Pick your decklist";
             this.ResumeLayout(false);
             this.PerformLayout();
 

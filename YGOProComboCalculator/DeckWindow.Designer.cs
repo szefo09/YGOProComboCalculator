@@ -189,7 +189,7 @@
             this.Controls.Add(this.DeckListBox);
             this.Name = "DeckWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DeckWindow";
+            this.Text = "Combo Picker";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DeckWindow_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
