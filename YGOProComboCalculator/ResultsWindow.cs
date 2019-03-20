@@ -68,7 +68,7 @@ namespace YGOProComboCalculator
             }
             decimal percentage = GetPercentage(_globalCombosCount, _reshuffleAmount);
             amountLabel.Text = _globalCombosCount.ToString() + " out of "+ _reshuffleAmount + " hands = " + percentage.ToString()+"%";
-            File.WriteAllLines($"ComboCalclogs_{DateTime.Now.ToString("yyyyMMddTHHmmss")}.txt", logs);
+            File.WriteAllLines($"ComboLogs_{DateTime.Now.ToString("yyyyMMddTHHmmss")}.txt", logs);
         }
         private void DisplayResults(List<Card> combo,int result)
         {
