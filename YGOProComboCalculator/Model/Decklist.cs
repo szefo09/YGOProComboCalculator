@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading;
 using YGOProComboCalculator.Services;
 
 namespace YGOProComboCalculator.Model
@@ -90,10 +91,9 @@ namespace YGOProComboCalculator.Model
         }
         public static List<int> rand(List<int> cards)
         {
-            Random rand = new Random();
             for (int i = 0; i < cards.Count; i++)
             {
-                int random_index = rand.Next() % cards.Count;
+                int random_index = ThreadSafeRandom.ThisThreadsRandom.Next() % cards.Count;
                 var t = cards[i];
                 cards[i] = cards[random_index];
                 cards[random_index] = t;
@@ -107,5 +107,13 @@ namespace YGOProComboCalculator.Model
         public IList<int> Extra = new List<int>();
         public IList<int> Side = new List<int>();
     }
+    public static class ThreadSafeRandom
+    {
+        [ThreadStatic] private static Random Local;
 
+        public static Random ThisThreadsRandom
+        {
+            get { return Local ?? (Local = new Random(unchecked(Environment.TickCount * 31 + Thread.CurrentThread.ManagedThreadId))); }
+        }
+    }
 }
