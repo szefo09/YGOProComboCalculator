@@ -40,8 +40,11 @@ namespace YGOProComboCalculator
             if (index != System.Windows.Forms.ListBox.NoMatches)
             {
                 Card card = (Card)DeckListBox.Items[index];
-                ComboListBox.Items.Add(card);
-                //DeckListBox.Items.Remove(card);
+                if (ComboListBox.Items.Cast<Card>().Where(x => x.Id == card.Id).Count() < 3)
+                {
+                    ComboListBox.Items.Add(card);
+                }
+                
             }
         }
 
