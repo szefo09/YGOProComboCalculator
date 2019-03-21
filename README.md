@@ -3,7 +3,3 @@
 
 ## How to use: https://imgur.com/a/a46FUeB
 
-TODO List:
-1) Add other YGOPro clients support.
-2) Improve UI
-3) Add a way to view already added combos
