@@ -143,7 +143,7 @@ namespace YGOProComboCalculator
 
         private void OpenLogsButton_Click(object sender, EventArgs e)
         {
-            Process.Start(LastComboLogFileName);
+            Process.Start(Path.Combine(_logsFolder,LastComboLogFileName));
         }
     }
 }
