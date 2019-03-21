@@ -15,7 +15,7 @@ namespace YGOProComboCalculator
         public MainWindow()
         {
             InitializeComponent();
-            LoadCDBs();
+            Loader.LoadCDBs();
             LoadDecks();
             listBox1.DataSource = Decks;
             //listBox1.DataSource = new BindingSource(Decks, null);
@@ -24,29 +24,7 @@ namespace YGOProComboCalculator
             //listBox1.ValueMember = "Key";
         }
 
-        private void LoadCDBs()
-        {
-            try
-            {
-                FileInfo[] fileInfos = (new DirectoryInfo("cdb")).GetFiles().OrderByDescending(x => x.Name).ToArray(); //load cards.cdb last this way
-                for (int i = 0; i < fileInfos.Length; i++)
-                {
-                    if (fileInfos[i].Name.Length > 4)
-                    {
-                        if (fileInfos[i].Name.Substring(fileInfos[i].Name.Length - 4, 4) == ".cdb")
-                        {
-                            CardsManager.initialize("cdb/" + fileInfos[i].Name);
-                        }
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                MessageBox.Show(e.ToString() + "\n\n\nPlace the app in your YGOPro2 folder.\nIf this app is in YGOPro2 folder, send a screenshot of  this message to Szefo09", "Error loading files! Place this app in YGOPro2 folder!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Environment.Exit(1);
-            }
 
-        }
         private void LoadDecks()
         {
             try
@@ -66,7 +44,7 @@ namespace YGOProComboCalculator
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.ToString() + "\n\n\nPlace the app in your YGOPro2 folder.\nIf this app is in YGOPro2 folder, send a screenshot of  this message to Szefo09", "Error loading files! Place this app in YGOPro2 folder!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(e.ToString() + "\n\n\nPlace the app in your YGOPro client folder.\nIf this app is in YGOPro client folder, send a screenshot of  this message to Szefo09", "Error loading files! Place this app in YGOPro2 folder!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Environment.Exit(1);
             }
         }

@@ -59,7 +59,10 @@ namespace YGOProComboCalculator
         private void AddAnotherButton_Click(object sender, EventArgs e)
         {
             List<Card> combo = ComboListBox.Items.Cast<Card>().ToList();
-            _combos.Add(combo);
+            if (combo.Count > 0)
+            {
+                _combos.Add(combo);
+            }
             ComboListBox.Items.Clear();
             LoadCardsToDecklistBox();
         }
@@ -71,9 +74,12 @@ namespace YGOProComboCalculator
             {
                 return;
             }
-            _combos.Add(combo);
-            
-            ResultsWindow resultsWindow = new ResultsWindow(_combos,_decklist.Main.ToList(),numericUpDown1.Value, GoFirstCheckbox.Checked);
+            if (combo.Count > 0)
+            {
+                _combos.Add(combo);
+            }
+
+            ResultsWindow resultsWindow = new ResultsWindow(_combos,_decklist,numericUpDown1.Value, GoFirstCheckbox.Checked);
             this.Hide();
             resultsWindow.ShowDialog();
             resultsWindow.Dispose();
@@ -91,6 +97,13 @@ namespace YGOProComboCalculator
         {
             goBack = true;
             this.Dispose();
+        }
+
+        private void ViewAlreadyAddedCombos(object sender, EventArgs e)
+        {
+            CurrentCombosWindow currentCombosWindow = new CurrentCombosWindow(_combos);
+            currentCombosWindow.ShowDialog();
+            currentCombosWindow.Dispose();
         }
     }
 }

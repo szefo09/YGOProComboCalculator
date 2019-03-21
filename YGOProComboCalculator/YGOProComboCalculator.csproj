@@ -68,6 +68,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CurrentCombosWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CurrentCombosWindow.Designer.cs">
+      <DependentUpon>CurrentCombosWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="DeckWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,10 @@
     <Compile Include="Services\GameStringHelper.cs" />
     <Compile Include="Services\GameStringManager.cs" />
     <Compile Include="Services\ListComparer.cs" />
+    <Compile Include="Services\Loader.cs" />
+    <EmbeddedResource Include="CurrentCombosWindow.resx">
+      <DependentUpon>CurrentCombosWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DeckWindow.resx">
       <DependentUpon>DeckWindow.cs</DependentUpon>
     </EmbeddedResource>

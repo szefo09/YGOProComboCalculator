@@ -11,7 +11,7 @@ namespace YGOProComboCalculator.Services
 {
     public class CardsManager
     {
-        public static IDictionary<int, Card> _cards = new Dictionary<int, Card>();
+        public static IDictionary<int, Card> Cards = new Dictionary<int, Card>();
 
         public static string nullName = "";
 
@@ -20,9 +20,9 @@ namespace YGOProComboCalculator.Services
         internal static Card GetCard(int id)
         {
 
-            if (_cards.ContainsKey(id))
+            if (Cards.ContainsKey(id))
             {
-                return _cards[id].clone();
+                return Cards[id].clone();
             }
 
             return null;
@@ -50,9 +50,9 @@ namespace YGOProComboCalculator.Services
         private static void LoadCard(IDataRecord reader)
         {
             Card card = new Card(reader);
-            if (!_cards.ContainsKey(card.Id))
+            if (!Cards.ContainsKey(card.Id))
             {
-                _cards.Add(card.Id, card);
+                Cards.Add(card.Id, card);
             }
         }
 

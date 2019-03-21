@@ -13,7 +13,7 @@ namespace YGOProComboCalculator
     public partial class ResultsWindow : Form
     {
         private List<List<Card>> _combos;
-        private List<int> _deck;
+        private List<int> _deckMain;
         private List<List<int>> _combosIds = new List<List<int>>();
         private int _globalCombosCount;
         private bool goBack = false;
@@ -21,7 +21,9 @@ namespace YGOProComboCalculator
         private short handSize;
         private List<string> logs = new List<string>();
         private string LastComboLogFileName;
-        public ResultsWindow(List<List<Card>> combos,List<int> deck, decimal reshuffleAmount, bool goFirst)
+        private readonly string _logsFolder = "YGOPro Combo Calculator Logs";
+        private string _deckName;
+        public ResultsWindow(List<List<Card>> combos,Decklist deck, decimal reshuffleAmount, bool goFirst)
         {
             InitializeComponent();
             _combos = combos;
@@ -33,7 +35,8 @@ namespace YGOProComboCalculator
                 List<int> comboIds = combo.Select(x => x.Id).Distinct().ToList();
                 _combosIds.Add(comboIds);
             }
-            _deck = deck;
+            _deckMain = deck.Main.ToList();
+            _deckName = deck.Name;
             CalculateResults();
         }
         private void CalculateResults()
@@ -41,7 +44,7 @@ namespace YGOProComboCalculator
             int[] comboCount = new int[_combos.Count];
             for (int i = 0; i < _reshuffleAmount; i++)
             {
-                List<int> randomHand = Decklist.rand(_deck).GetRange(0, handSize);
+                List<int> randomHand = Decklist.rand(_deckMain).GetRange(0, handSize);
                 bool firstFound = true;
                 for (int j = 0; j < _combosIds.Count; j++)
                 {
@@ -76,8 +79,19 @@ namespace YGOProComboCalculator
             }
             decimal percentage = GetPercentage(_globalCombosCount, _reshuffleAmount);
             amountLabel.Text = _globalCombosCount.ToString() + " out of "+ _reshuffleAmount + " hands = " + percentage.ToString()+"%";
-            LastComboLogFileName = $"ComboLogs_{DateTime.Now.ToString("yyyyMMddTHHmmss")}.txt";
-            File.WriteAllLines(LastComboLogFileName, logs);
+            LastComboLogFileName = $"ComboLogs_{_deckName}_{DateTime.Now.ToString("yyyyMMddTHHmmss")}.txt";
+            try
+            {
+                if (!Directory.Exists(_logsFolder))
+                {
+                    Directory.CreateDirectory(_logsFolder);
+                }
+                File.WriteAllLines(Path.Combine(_logsFolder, LastComboLogFileName), logs);
+            }
+            catch
+            {
+                MessageBox.Show("The app experienced issues exporting logs into the folder.","Error saving logs to the logs folder",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
             logs.Clear();
         }
         private void DisplayResults(List<Card> combo,int result)

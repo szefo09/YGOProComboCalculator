@@ -38,15 +38,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.GoFirstCheckbox = new System.Windows.Forms.CheckBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // DeckListBox
             // 
+            this.DeckListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.DeckListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.DeckListBox.FormattingEnabled = true;
             this.DeckListBox.ItemHeight = 25;
-            this.DeckListBox.Location = new System.Drawing.Point(12, 18);
+            this.DeckListBox.Location = new System.Drawing.Point(12, 36);
             this.DeckListBox.Name = "DeckListBox";
             this.DeckListBox.Size = new System.Drawing.Size(369, 304);
             this.DeckListBox.TabIndex = 0;
@@ -54,10 +57,13 @@
             // 
             // ComboListBox
             // 
+            this.ComboListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ComboListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ComboListBox.FormattingEnabled = true;
             this.ComboListBox.ItemHeight = 25;
-            this.ComboListBox.Location = new System.Drawing.Point(419, 18);
+            this.ComboListBox.Location = new System.Drawing.Point(419, 36);
             this.ComboListBox.Name = "ComboListBox";
             this.ComboListBox.Size = new System.Drawing.Size(369, 304);
             this.ComboListBox.TabIndex = 1;
@@ -65,9 +71,12 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(12, 325);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(646, 24);
             this.label1.TabIndex = 2;
@@ -75,6 +84,7 @@
             // 
             // CalculateButton
             // 
+            this.CalculateButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.CalculateButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.CalculateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.CalculateButton.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -88,10 +98,11 @@
             // 
             // AddAnotherButton
             // 
+            this.AddAnotherButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.AddAnotherButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.AddAnotherButton.Location = new System.Drawing.Point(213, 404);
+            this.AddAnotherButton.Location = new System.Drawing.Point(213, 347);
             this.AddAnotherButton.Name = "AddAnotherButton";
-            this.AddAnotherButton.Size = new System.Drawing.Size(168, 42);
+            this.AddAnotherButton.Size = new System.Drawing.Size(168, 55);
             this.AddAnotherButton.TabIndex = 3;
             this.AddAnotherButton.Text = "Add another combo";
             this.AddAnotherButton.UseVisualStyleBackColor = true;
@@ -99,8 +110,9 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(12, 374);
+            this.button1.Location = new System.Drawing.Point(12, 347);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(125, 33);
             this.button1.TabIndex = 5;
@@ -110,6 +122,7 @@
             // 
             // numericUpDown1
             // 
+            this.numericUpDown1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.numericUpDown1.Increment = new decimal(new int[] {
             100,
@@ -118,7 +131,7 @@
             0});
             this.numericUpDown1.Location = new System.Drawing.Point(595, 372);
             this.numericUpDown1.Maximum = new decimal(new int[] {
-            100000,
+            1000000,
             0,
             0,
             0});
@@ -139,6 +152,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(592, 356);
             this.label2.Name = "label2";
@@ -148,6 +162,7 @@
             // 
             // GoFirstCheckbox
             // 
+            this.GoFirstCheckbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.GoFirstCheckbox.AutoSize = true;
             this.GoFirstCheckbox.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.GoFirstCheckbox.Checked = true;
@@ -162,8 +177,9 @@
             // 
             // button2
             // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.Location = new System.Drawing.Point(12, 413);
+            this.button2.Location = new System.Drawing.Point(12, 420);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(125, 33);
             this.button2.TabIndex = 9;
@@ -171,12 +187,25 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button3.Location = new System.Drawing.Point(213, 408);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(168, 45);
+            this.button3.TabIndex = 10;
+            this.button3.Text = "View already added combos";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.ViewAlreadyAddedCombos);
+            // 
             // DeckWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 458);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.GoFirstCheckbox);
             this.Controls.Add(this.label2);
@@ -187,6 +216,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ComboListBox);
             this.Controls.Add(this.DeckListBox);
+            this.MinimumSize = new System.Drawing.Size(816, 497);
             this.Name = "DeckWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Combo Picker";
@@ -209,5 +239,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox GoFirstCheckbox;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
