@@ -5,3 +5,4 @@
 
 TODO List:
 1) Add other YGOPro clients support.
+2) Improve UI
