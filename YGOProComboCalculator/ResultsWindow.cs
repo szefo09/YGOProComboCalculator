@@ -42,15 +42,21 @@ namespace YGOProComboCalculator
             for (int i = 0; i < _reshuffleAmount; i++)
             {
                 List<int> randomHand = Decklist.rand(_deck).GetRange(0, handSize);
+                bool firstFound = true;
                 for (int j = 0; j < _combosIds.Count; j++)
                 {
+                    
                     bool resultFound = false;
                     List<int> combo = _combosIds[j];
                     if (ListComparer.ContainsAllItems(randomHand, combo))
                     {
                         resultFound = true;
                         comboCount[j]++;
-                        _globalCombosCount++;
+                        if (firstFound)
+                        {
+                            _globalCombosCount++;
+                            firstFound = false;
+                        }
                     }
                     List<Card> randomHandCard = new List<Card>();
                     foreach (var c in randomHand)
