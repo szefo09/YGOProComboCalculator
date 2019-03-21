@@ -1,5 +1,5 @@
-# YGOProComboCalculator
+# YGOPro Combo Calculator
 ## Simple tool that let's you test your hands for opening a specific combo.
-
-## How to use: https://imgur.com/a/a46FUeB
+Place the app in the main folder of your YGOPro Client
+## How to use: https://imgur.com/a/TSuQXvg
 
