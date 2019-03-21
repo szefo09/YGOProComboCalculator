@@ -1,4 +1,7 @@
 # YGOProComboCalculator
-Simple tool that let's you test your hands for opening a specific combo.
+## Simple tool that let's you test your hands for opening a specific combo.
 
-How to use: https://imgur.com/a/a46FUeB
+## How to use: https://imgur.com/a/a46FUeB
+
+TODO List:
+1) Add other YGOPro clients support.
