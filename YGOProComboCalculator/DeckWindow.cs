@@ -41,7 +41,7 @@ namespace YGOProComboCalculator
             {
                 Card card = (Card)DeckListBox.Items[index];
                 ComboListBox.Items.Add(card);
-                DeckListBox.Items.Remove(card);
+                //DeckListBox.Items.Remove(card);
             }
         }
 

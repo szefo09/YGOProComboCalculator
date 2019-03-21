@@ -100,8 +100,10 @@
     <Compile Include="Services\CardsManager.cs" />
     <Compile Include="Services\GameStringHelper.cs" />
     <Compile Include="Services\GameStringManager.cs" />
+    <Compile Include="Services\IEnumerablesExtensions.cs" />
     <Compile Include="Services\ListComparer.cs" />
     <Compile Include="Services\Loader.cs" />
+    <Compile Include="Services\ValueCounter.cs" />
     <EmbeddedResource Include="CurrentCombosWindow.resx">
       <DependentUpon>CurrentCombosWindow.cs</DependentUpon>
     </EmbeddedResource>

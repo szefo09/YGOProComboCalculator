@@ -7,7 +7,7 @@ namespace YGOProComboCalculator.Services
     {
         public static bool ContainsAllItems<T>(List<T> a, List<T> b)
         {
-            return a.Intersect(b).Count() == b.Count();
+            return a.IntersectAll(b).Count() == b.Count();
         }
     }
 }

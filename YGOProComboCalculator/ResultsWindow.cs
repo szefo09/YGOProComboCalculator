@@ -32,7 +32,7 @@ namespace YGOProComboCalculator
             numericUpDown1.Value = _reshuffleAmount;
             foreach (var combo in _combos)
             {
-                List<int> comboIds = combo.Select(x => x.Id).Distinct().ToList();
+                List<int> comboIds = combo.Select(x => x.Id).ToList();
                 _combosIds.Add(comboIds);
             }
             _deckMain = deck.Main.ToList();
