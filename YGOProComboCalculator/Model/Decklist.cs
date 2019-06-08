@@ -51,14 +51,14 @@ namespace YGOProComboCalculator.Model
                     {
                         flag = 3;
                     }
-                    else
+                    else if(flag > 0)
                     {
                         int code = 0;
                         try
                         {
                             code = Int32.Parse(line);
                         }
-                        catch (Exception)
+                        catch (Exception n)
                         {
 
                         }

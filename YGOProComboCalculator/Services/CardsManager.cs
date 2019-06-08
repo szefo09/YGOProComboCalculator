@@ -22,7 +22,7 @@ namespace YGOProComboCalculator.Services
 
             if (Cards.ContainsKey(id))
             {
-                return Cards[id].clone();
+                return Cards[id];
             }
 
             return null;
@@ -83,7 +83,7 @@ namespace YGOProComboCalculator.Services
             int settype = setCodeToAnalyse & 0xfff;
             int setsubtype = setCodeToAnalyse & 0xf000;
             long sc = setCodeFromCard;
-            while (sc != 0)
+            while (sc != 0 && sc != -1)
             {
                 if ((sc & 0xfff) == settype && (sc & 0xf000 & setsubtype) == setsubtype)
                     res = true;

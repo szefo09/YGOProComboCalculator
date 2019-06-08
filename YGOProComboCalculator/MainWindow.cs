@@ -29,15 +29,33 @@ namespace YGOProComboCalculator
         {
             try
             {
-                FileInfo[] fileInfos = (new DirectoryInfo("deck")).GetFiles().OrderByDescending(x => x.Name).ToArray();
-                for (int i = 0; i < fileInfos.Length; i++)
+                if (Directory.Exists("deck"))
                 {
-                    if (fileInfos[i].Name.Length > 4)
+                    FileInfo[] fileInfos = (new DirectoryInfo("deck")).GetFiles().OrderByDescending(x => x.Name).ToArray();
+                    for (int i = 0; i < fileInfos.Length; i++)
                     {
-                        if (fileInfos[i].Name.Substring(fileInfos[i].Name.Length - 4, 4) == ".ydk")
+                        if (fileInfos[i].Name.Length > 4)
                         {
-                            var Decklist = new Decklist(fileInfos[i].FullName);
-                            Decks.Add(Decklist);
+                            if (fileInfos[i].Name.Substring(fileInfos[i].Name.Length - 4, 4) == ".ydk")
+                            {
+                                var Decklist = new Decklist(fileInfos[i].FullName);
+                                Decks.Add(Decklist);
+                            }
+                        }
+                    }
+                }
+                if (Directory.Exists("Data") && Directory.Exists("Data/Deck"))
+                {
+                    FileInfo[] fileInfos = (new DirectoryInfo("Data/Deck")).GetFiles().OrderByDescending(x => x.Name).ToArray();
+                    for (int i = 0; i < fileInfos.Length; i++)
+                    {
+                        if (fileInfos[i].Name.Length > 4)
+                        {
+                            if (fileInfos[i].Name.Substring(fileInfos[i].Name.Length - 4, 4) == ".ydk")
+                            {
+                                var Decklist = new Decklist(fileInfos[i].FullName);
+                                Decks.Add(Decklist);
+                            }
                         }
                     }
                 }

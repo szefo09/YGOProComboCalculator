@@ -66,19 +66,19 @@ namespace YGOProComboCalculator
                     {
                         randomHandCard.Add(CardsManager.GetCard(c));
                     }
-                    logs.Add("Hand number " + i.ToString() + " Combo number: " + j.ToString() + " Found combo: " + resultFound + " Combo: " + string.Join(", ", _combos[j]) + " Hand: " + string.Join(", ", randomHandCard));
+                    logs.Add($"Hand number {i.ToString()} Combo number: {j.ToString()} Found combo: {resultFound} Combo: {string.Join(", ", _combos[j])} Hand: {string.Join(", ", randomHandCard)}");
                 } 
             }
             for (int j = 0; j < _combosIds.Count; j++)
             {
-                logs.Add("\nResult for Combo" + j.ToString() + " is: " + comboCount[j].ToString() + "\n");
+                logs.Add($"\nResult for Combo{j.ToString()} is: {comboCount[j].ToString()}\n");
             }
             for (int i = 0; i < _combos.Count; i++)
             {
                 DisplayResults(_combos[i], comboCount[i]);
             }
             decimal percentage = GetPercentage(_globalCombosCount, _reshuffleAmount);
-            amountLabel.Text = _globalCombosCount.ToString() + " out of "+ _reshuffleAmount + " hands = " + percentage.ToString()+"%";
+            amountLabel.Text = $"{_globalCombosCount.ToString()} out of {_reshuffleAmount} hands = {percentage.ToString()}%";
             LastComboLogFileName = $"ComboLogs_{_deckName}_{DateTime.Now.ToString("yyyyMMddTHHmmss")}.txt";
             try
             {

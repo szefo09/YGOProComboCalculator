@@ -22,8 +22,14 @@ namespace YGOProComboCalculator
         private void LoadCardsToDecklistBox()
         {
             DeckListBox.Items.Clear();
-            DeckListBox.Items.AddRange(_decklist.CardMain.ToArray());
-
+            try
+            {
+                DeckListBox.Items.AddRange(_decklist.CardMain.ToArray());
+            }
+            catch
+            {
+                MessageBox.Show("Error loading the selected decklist. Make sure the decklist contains cards.");
+            }
         }
 
         private void DeckWindow_FormClosed(object sender, FormClosedEventArgs e)
@@ -44,7 +50,7 @@ namespace YGOProComboCalculator
                 {
                     ComboListBox.Items.Add(card);
                 }
-                
+
             }
         }
 
@@ -82,7 +88,7 @@ namespace YGOProComboCalculator
                 _combos.Add(combo);
             }
 
-            ResultsWindow resultsWindow = new ResultsWindow(_combos,_decklist,numericUpDown1.Value, GoFirstCheckbox.Checked);
+            ResultsWindow resultsWindow = new ResultsWindow(_combos, _decklist, numericUpDown1.Value, GoFirstCheckbox.Checked);
             this.Hide();
             resultsWindow.ShowDialog();
             resultsWindow.Dispose();

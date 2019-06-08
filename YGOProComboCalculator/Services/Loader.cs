@@ -25,6 +25,10 @@ namespace YGOProComboCalculator.Services
                     LoadCDBsFromFolder(dir.FullName);
                 }
             }
+            if (Directory.Exists("Game") && Directory.Exists("Game/CDB"))
+            {
+                LoadCDBsFromFolder("Game/CDB");
+            }
             if (Directory.Exists(@"locales/en-US"))
             {
                 LoadCDBsFromFolder("locales/en-US");
