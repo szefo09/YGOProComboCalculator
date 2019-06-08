@@ -7,11 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using YGOProComboCalculator.Custom;
 using YGOProComboCalculator.Model;
 
 namespace YGOProComboCalculator
 {
-    public partial class CurrentCombosWindow : Form
+    public partial class CurrentCombosWindow : CustomForm
     {
         private List<List<Card>> _combos;
 

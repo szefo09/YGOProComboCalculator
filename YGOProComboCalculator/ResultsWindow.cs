@@ -5,12 +5,13 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using YGOProComboCalculator.Custom;
 using YGOProComboCalculator.Model;
 using YGOProComboCalculator.Services;
 
 namespace YGOProComboCalculator
 {
-    public partial class ResultsWindow : Form
+    public partial class ResultsWindow : CustomForm
     {
         private List<List<Card>> _combos;
         private List<int> _deckMain;

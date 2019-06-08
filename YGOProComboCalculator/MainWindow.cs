@@ -4,12 +4,13 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using YGOProComboCalculator.Custom;
 using YGOProComboCalculator.Model;
 using YGOProComboCalculator.Services;
 
 namespace YGOProComboCalculator
 {
-    public partial class MainWindow : Form
+    public partial class MainWindow : CustomForm
     {
         private List<Decklist> Decks = new List<Decklist>();
         public MainWindow()

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
+using YGOProComboCalculator.Custom;
 using YGOProComboCalculator.Model;
-using YGOProComboCalculator.Services;
 
 namespace YGOProComboCalculator
 {
-    public partial class DeckWindow : Form
+    public partial class DeckWindow : CustomForm
     {
         private List<List<Card>> _combos = new List<List<Card>>();
         private Decklist _decklist;
