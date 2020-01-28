@@ -34,7 +34,7 @@ namespace YGOProComboCalculator.Services
             {
                 connection.Open();
 
-                using (IDbCommand command = new SQLiteCommand("SELECT datas.*, texts.* FROM datas,texts WHERE datas.id=texts.id;", connection))
+                using (IDbCommand command = new SQLiteCommand("SELECT datas.id, datas.ot, datas.alias, datas.setcode, datas.type, datas.atk, datas.def, datas.level, datas.race,datas.attribute, datas.category, texts.* FROM datas,texts WHERE datas.id=texts.id;", connection))
                 {
                     using (IDataReader reader = command.ExecuteReader())
                     {
